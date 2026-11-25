@@ -206,7 +206,7 @@ async def setup_webhook():
     except Exception as e:
         return {"error": str(e)}
 
-if __name__ == "__main__":
+if __name__ == "__maun__":
     PORT = int(os.getenv("PORT", 8080))
     print(f"🚀 Сервер запущен на порту {PORT}")
     uvicorn.run(app, host="0.0.0.0", port=PORT)
