@@ -20,7 +20,7 @@ TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 if not TOKEN:
     raise ValueError("Переменная TELEGRAM_BOT_TOKEN не найдена!")
 
-WEBHOOK_URL = "https://твой-проект.up.railway.app/webhook"  # замени на свой URL
+WEBHOOK_URL = "telegram-chatbot-production-274b6c97.up.railway.app/webhook"  # замени на свой URL
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
