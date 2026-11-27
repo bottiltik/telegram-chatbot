@@ -213,6 +213,14 @@ async def webhook_info():
         return info.model_dump()
     except Exception as e:
         return {"error": str(e)}
+        
+@app.get("/reset_webhook")
+async def reset_webhook():
+    try:
+        await bot.delete_webhook(drop_pending_updates=True)
+        return {"status": "webhook deleted"}
+    except Exception as e:
+        return {"error": str(e)}
 
 if __name__ == "__maun__":
     PORT = int(os.getenv("PORT", 8080))
