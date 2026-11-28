@@ -183,6 +183,10 @@ async def cmd_warning(message: types.Message):
     for name, avg in at_risk:
         lines.append(f"• {name} — {avg}")
     await message.answer("\n".join(lines))
+    
+@dp.message()
+async def catch_all(message: types.Message):
+    await message.answer(f"Апдейт дошёл! Ты написал: {message.text}")
 
 # --- FastAPI ---
 app = FastAPI()
