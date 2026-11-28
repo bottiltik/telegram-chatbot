@@ -218,6 +218,11 @@ async def webhook_info():
     except Exception as e:
         return {"error": str(e)}
         
+@app.get("/me")
+async def who_am_i():
+    me = await bot.get_me()
+    return {"username": me.username}
+
 @app.get("/reset_webhook")
 async def reset_webhook():
     try:
